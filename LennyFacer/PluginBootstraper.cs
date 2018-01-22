@@ -44,6 +44,11 @@ namespace BW.Lennier
 								[NotNull] HotkeyManager hotkeyManager)
 		{
 			_sandbox = new PluginSandbox(_logger, _containers, builder, hotkeyManager);
+			foreach (var container in Containers)
+			{
+				container.Component.Initialize();
+			}
+
 			_sandbox.SandboxOptions(builder);
 			_sandbox.SandboxHotkeys(hotkeyManager);
 		}

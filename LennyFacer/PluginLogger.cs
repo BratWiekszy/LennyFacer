@@ -106,8 +106,7 @@ namespace BW.Lennier
 
 		public void LogHotkeyException([NotNull] HotkeyException e)
 		{
-			Func<string> inject = () => e.Message;
-			LogException(e.InnerException, inject);
+			LogException(e.InnerException, () => e.Message);
 		}
 	}
 }

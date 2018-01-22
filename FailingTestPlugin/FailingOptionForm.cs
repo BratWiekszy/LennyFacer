@@ -14,10 +14,6 @@ namespace FailingTestPlugin
 		private void button1_Click(object sender, System.EventArgs e)
 		{
 			throw new ArgumentNullException();
-			var a = 5;
-			var b = 1;
-			b--;
-			a /= b;
 		}
 	}
 }
