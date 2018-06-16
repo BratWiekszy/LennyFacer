@@ -9,7 +9,7 @@ namespace BW.Lennier.PluginModel
 	{
 		void Initialize();
 
-		[NotNull]
+		[CanBeNull]
 		IDefineHotkeys GetHotkeyDefinition();
 
 		[CanBeNull] 
