@@ -9,6 +9,8 @@ namespace BW.Lennier
 {
 	internal sealed class ComponentContainer
 	{
+		private static readonly IEnumerable<Pair<HotkeyKey, HotkeyEventHandler>> EmptyHotkeys 
+			= new Pair<HotkeyKey, HotkeyEventHandler>[0];
 		private string _assemblyId;
 		private IMainComponent _component;
 		private UiOptionsCreator _optionCreator;
@@ -58,7 +60,11 @@ namespace BW.Lennier
 		internal IEnumerable<Pair<HotkeyKey, HandledEventHandler>> CreateHotkeyBindings(
 			[NotNull] Func<IHotkeyProxy> proxyFactory)
 		{
-			var hotkeys     = _component.GetHotkeyDefinition().GetHotkeysToActions();
+			var hotkeyDefinition = _component.GetHotkeyDefinition();
+			var hotkeys = hotkeyDefinition == null 
+				? EmptyHotkeys 
+				: hotkeyDefinition.GetHotkeysToActions();
+
 			_hotkeyBindings = new List<Pair<HotkeyKey, IHotkeyProxy>>();
 
 			foreach(var hotkey in hotkeys)

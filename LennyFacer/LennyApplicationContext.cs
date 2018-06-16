@@ -50,8 +50,7 @@ namespace BW.Lennier
 			_trayIcon.AddSpecialMenuItem(null, Exit, exit: true);
 
 			_optionsBuilder = new OptionsFormBuilder();
-			_optionsBuilder.AddOptionCreator(_lennyComponent.GetComponentOptionsCreator()
-											 ?? throw new ArgumentNullException());
+			_optionsBuilder.AddOptionCreator(_lennyComponent.GetComponentOptionsCreator());
 		}
 
 		private void RegisterHotkey()

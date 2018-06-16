@@ -43,8 +43,7 @@ namespace BW.Lennier
 			return (s, args) => callback(((Hotkey)s).Key);
 		}
 
-		public void AddHotkeys(
-		[NotNull] IEnumerable<Pair<HotkeyKey, HotkeyEventHandler>> hotkeys)
+		public void AddHotkeys([NotNull] IEnumerable<Pair<HotkeyKey, HotkeyEventHandler>> hotkeys)
 		{
 			foreach (var hotkey in hotkeys)
 			{
