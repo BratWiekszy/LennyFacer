@@ -74,6 +74,7 @@ namespace BW.Lennier
 			
 		}
 
+		[NotNull]
 		public IDefineHotkeys GetHotkeyDefinition()
 		{
 			return this;
@@ -81,12 +82,13 @@ namespace BW.Lennier
 
 		public IEnumerable<Pair<HotkeyKey, HotkeyEventHandler>> GetHotkeysToActions()
 		{
-			var key = new HotkeyKey(Keys.L, "Copies last used lenny to clipboard.",
+			/*var key = new HotkeyKey(Keys.L, "Copies last used lenny to clipboard.",
 									KeyModifiers.Control);
 			yield return new Pair<HotkeyKey, HotkeyEventHandler>(key, k =>
 			{
 				_lennys.OnMainHotkey();
-			});
+			});*/
+			return new Pair<HotkeyKey, HotkeyEventHandler>[0];
 		}
 
 		[NotNull]
