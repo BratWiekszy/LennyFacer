@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JetBrains.Annotations">
-      <HintPath>..\..\JetBrains.Annotations.dll</HintPath>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\JetBrains.Annotations.dll</HintPath>
     </Reference>
-    <Reference Include="Lennier.PluginModel">
-      <HintPath>..\..\Lennier.PluginModel.dll</HintPath>
+    <Reference Include="Lennier.PluginModel, Version=1.0.0.0">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\Lennier.PluginModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,4 +56,7 @@
     <Compile Include="XamlStyleParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(SolutionDir)..\Assemblies\Lennier.PluginModel.dll" "$(ProjectDir)bin\$(ConfigurationName)" /Y</PreBuildEvent>
+  </PropertyGroup>
 </Project>
