@@ -1,13 +1,12 @@
 ﻿using System;
-using NUnit.Framework;
 using Xaml._2Style;
+using Xunit;
 
 namespace Tests
 {
-	[TestFixture]
 	public class XamlStyleParserTests
 	{
-		[Test]
+		[Xunit.Fact]
 		public void DebugTest()
 		{
 			var text =
@@ -15,8 +14,8 @@ namespace Tests
 			var parser = new XamlStyleParser();
 			var r = parser.ConvertString(text);
 			Console.WriteLine(r);
-			Assert.AreEqual(true, r.StartsWith("<Style TargetType=\"TextBox\""));
-			Assert.AreEqual(true, r.EndsWith("</Style>"));
+			Assert.Equal(true, r.StartsWith("<Style TargetType=\"TextBox\""));
+			Assert.Equal(true, r.EndsWith("</Style>"));
 		}
 	}
 }
