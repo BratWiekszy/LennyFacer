@@ -1,13 +1,13 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Xaml._2Style;
 
 namespace Tests
 {
-	[TestClass]
+	[TestFixture]
 	public class XamlStyleParserTests
 	{
-		[TestMethod]
+		[Test]
 		public void DebugTest()
 		{
 			var text =
